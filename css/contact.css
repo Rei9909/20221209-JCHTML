@@ -1,20 +1,20 @@
+@charset "UTF-8";
+/* CSS Document */
 .main {
   font-family: 'Shippori Mincho', serif;
   width: 100%;
   background-color: #FBFBFB;
   overflow: hidden;
+  z-index: 0;
 }
 
 .main__line {
   width: 80%;
   margin: 0 auto;
 }
-
-/*-------------------------------共通事項------------------------------*/
-
 .ttl {
   margin-top: 100px;
-  margin-bottom: 50px;
+  margin-bottom:50px;
 }
 
 .ttl__main {
@@ -23,25 +23,6 @@
 
 .ttl__sub {
   font-size: 16px;
-  margin-top: 15px;
+  margin-top: 10px;	
+ font-weight: bold;
 }
-
-.text {
-  font-size: 16px;
-  line-height: 35px;
-}
-
-.move {
-  font-size: 16px;
-}
-
-
-/*--コンテンツ（タイトルから８％寄せ）--*/
-.recruit__contents,
-.policy__contents,
-.recruitment__contents,
-.contact__contents {
-  margin-left: 8%;
-}
-
-/*-------------------------------個別事項------------------------------*/

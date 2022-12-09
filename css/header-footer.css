@@ -4,6 +4,7 @@
 
 .header , .footer {
   font-family: 'Shippori Mincho', serif;
+  z-index: 5;
 }
 
 .header {
@@ -12,7 +13,6 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background-color: none;
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -35,6 +35,17 @@
   align-items: baseline;
   white-space: nowrap;
 }
+@media screen and (max-width:768px) {
+	.header__logo-itm {
+	  width: 40px;
+	  height: 40px;
+	}
+
+	.header__logo-txt {
+	  font-size: 16px;
+	  padding-top: 6px;
+	}
+	}
 
 .header__list {
   display: flex;
@@ -52,7 +63,6 @@
 
 .humburger {
   display: none;
-  z-index: 100;
 }
 
 @media screen and (max-width:768px) {
@@ -66,9 +76,13 @@
 
 .humburger__a {
   text-decoration: none;
-  color: blue;
+  color: #282828;
   font-size: 20px;
-  line-height: 60px;
+  line-height: 100px;
+}
+.humburger__a:hover{
+	color: #003CFF;
+	transition: .5s;
 }
 
 .humburger__nav {
@@ -77,12 +91,13 @@
   width: 100%;
   left: -100%;
   top: 0;
-  background: white;
-  transition: .7s;
+  background: #FFFFFF;
+  transition: 1.0s;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
+  z-index: 5;/*--------------------------------*/
 }
 
 .humburger__nav-item {
@@ -109,6 +124,7 @@
   background-color: #000;
   position: absolute;
   transition: 0.5s;
+	z-index: 6;/*-----------------------------*/
 }
 
 .humburger__menu-line-top {
@@ -204,8 +220,8 @@
 .footer__responsivenav-item {
   text-decoration: none;
   color: white;
-  font-size: 13px;
-  line-height: 30px;
+  font-size: 14px;
+  line-height: 50px;
 }
 
 .footer__responsivenav-list {
@@ -215,3 +231,65 @@
 .copy {
   font-size: 12px;
 }
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------アニメーション------------------------------------------------------*/
+
+
+
+/*--------------------ヘッダーメニュー　　ホバーで線出現----------------*/
+.header__a {
+  padding-bottom: 5px;
+  position: relative;
+}
+.header__a::before {
+  background: #282828;
+  content: '';
+  width: 82%;
+  height: 1px;
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  margin: auto;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform .5s;
+}
+.header__a:hover::before {
+  transform-origin: center;
+  transform: scale(1, 1);
+}
+
+/*----------------------フッター  メニュー　　ホバーで線出現--------------*/
+.footer__nav-item {
+  padding-bottom: 5px;
+  position: relative;
+}
+.footer__nav-item::before {
+  background: white;
+  content: '';
+  width: 100%;
+  height: 1.0px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: transform .5s;
+}
+.footer__nav-item:hover::before {
+  transform-origin: left;
+  transform: scale(1, 1);
+}
+
+
+
+
